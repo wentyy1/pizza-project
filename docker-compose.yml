@@ -1,0 +1,39 @@
+version: '3.9'
+
+services:
+
+  frontend:
+    build: ./pizza2 
+    ports:
+      - "3000:3000"
+    depends_on:
+      - pizza-backend
+
+  pizza-backend:
+    build: ./pizza-backend
+    ports:
+      - "3002:3001"
+    restart: always
+    environment:
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: pizza_menu
+      DB_USER: postgres
+      DB_PASSWORD: 2203
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:15
+    restart: always
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: pizza_menu
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 2203
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
