@@ -1,0 +1,487 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Wet+Paint&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Rubik Wet Paint';
+  background: #fff5e4;
+  color: #222;
+}
+.wrapper {
+  width: 1280px;
+  margin: 50px auto;
+}
+header {
+  position: relative;
+}
+header .logo{
+  font-weight: 600;
+  font-size: 24px;
+}
+header .shop-cart-button{
+  margin-left: 25px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  float: right;
+}
+header .shop-cart-button:hover{
+  color: #ff4d4d;
+  transform: scale(1.1);
+}
+header .shop-cart-button.active{
+   color: #ff4d4d;
+}
+
+header .shop-cart{
+  position: absolute;
+  top: 70px;
+  right: 50px;
+  width: 300px;
+  background: rgb(214, 214, 214);
+  border-radius: 8px;
+  box-shadow: 8px 6px 19px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 8px 6px 19px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 8px 6px 19px 0px rgba(0,0,0,0.75);
+  z-index: 1000; /* Додає поверх всіх інших елементів */
+}
+header .empty{
+  display: block;
+  padding: 20px;
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+}
+header .shop-cart .item{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+header .shop-cart .item img{
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+header .shop-cart .item .delete{
+  color:#e60000;
+  cursor: pointer;
+  position: relative;
+  float: right;
+  transition: color 0.3s ease;
+  top: 20px;
+}
+header .shop-cart .item .delete:hover{
+  color: #ff4d4d;
+  transform: scale(1.5);
+}
+header .summa{
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  padding: 10px;
+}
+
+header .nav-menu{
+  float: right;
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  font-size: 18px;
+  font-weight: 500;
+}
+header .nav-menu li{
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  header .nav-menu li:hover{
+    color: #ff4d4d;
+    transform: scale(1.1);
+  }
+header .nav-links{
+  margin: 50px 0;
+  background: url(./img/pizza.jpg) no-repeat center;
+  width: 100%;
+  height: 300px;
+  background-position: center center;
+  background-blend-mode: multiply;
+  background-color: rgb(145, 145, 145);
+  position: relative;
+}
+header .nav-links::after{
+  content: "Pizza is awesome";
+  color: white;
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+}
+main{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: space-between;
+}
+main .item{
+  width: 30%;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding-bottom: 20px;
+  transition: 0.3s;
+  position: relative;
+}
+main .item:hover{
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transform: scale(1.05);
+}
+main .item img{
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}
+main h2, main p, main b{
+  padding: 4px 20px;
+}
+main b{
+  color: #ff4d4d;
+}
+main button{
+  margin: 20px;
+  padding: 10px 20px;
+  border: none;
+  background: #ff4d4d;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  left: 20px;
+  
+}
+main button:hover{
+  background: #e60000;
+  transform: scale(1.1);
+} 
+
+/* Стилі для меню акаунта */
+/* ...existing code... */
+
+.account-button {
+  margin-left: 20px;
+  font-size: 22px;
+  cursor: pointer;
+  float: right;
+  color: #333;
+  transition: color 0.2s ease;
+}
+.account-button:hover { color: #e74c3c; }
+.account-button.active { color: #e74c3c; }
+
+.user-panel {
+  position: absolute;
+  top: 70px;
+  right: 80px; /* зсуньте щоб не перекривати кошик */
+  width: 260px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  z-index: 1001;
+}
+
+.user-top {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.user-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.user-info strong { display: block; font-size: 1em; color: #2c3e50; }
+.user-email { font-size: 0.85em; color: #7f8c8d; }
+
+.user-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.user-actions button {
+  padding: 8px 10px;
+  border: none;
+  background: #ff4d4d;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.user-actions button:hover { background: #e60000; transform: translateY(-1px); }
+
+
+footer{
+  margin-top: 100px;
+  text-align: center;
+  padding: 20px 0;
+  background-color: #222;
+  color: white;
+}
+
+/* стиль для помилок в БД */
+.loading-message {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #666;
+}
+
+.error-message {
+  text-align: center;
+  padding: 40px;
+  background: #ffeaea;
+  border: 1px solid #ffcccc;
+  border-radius: 8px;
+  margin: 20px;
+}
+
+.error-message p {
+  color: #d63031;
+  margin-bottom: 15px;
+}
+
+.error-message button {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.error-message button:hover {
+  background: #c0392b;
+}
+
+
+.shop-cart-button {
+  position: relative;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.shop-cart-button:hover {
+  color: #e74c3c;
+}
+
+.shop-cart-button.active {
+  color: #e74c3c;
+}
+
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #e74c3c;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.shop-cart {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  min-width: 300px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.empty {
+  text-align: center;
+  color: #7f8c8d;
+  padding: 20px;
+}
+
+.summa {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: #2c3e50;
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+  margin-top: 15px;
+}
+
+.logo {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-menu li {
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-menu li:hover {
+  color: #e74c3c;
+}
+
+/* Додайте в ваш основний CSS файл */
+.item img {
+  width: 400px;
+  height: 400px;
+  object-fit: cover; /* Щоб картинка не спотворювалася */
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.item img:hover {
+  transform: scale(1.05);
+}
+
+.order-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.order-item:last-child {
+  border-bottom: none;
+}
+
+.order-item img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.order-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.order-header h3 {
+  margin: 0;
+  font-size: 1.1em;
+  color: #2c3e50;
+  line-height: 1.3;
+  flex: 1;
+}
+
+.order-price {
+  color: #e74c3c;
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+.delete {
+  color: #e74c3c;
+  cursor: pointer;
+  font-size: 30px;
+  transition: all 0.3s ease;
+  padding: 6px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.delete:hover {
+  color: #c0392b;
+  background: #ffeaea;
+  border-radius: 30%;
+}
+header .btn_cart {
+  margin-top: 15px;
+  width: 100%;
+  padding: 10px 0;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+ .btn_beack {
+  margin: 0px 0 0 94%;
+  margin-bottom: 25px;
+  padding: 8px 16px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+ .btn_beack:hover {
+  background: #c0392b;
+}
+.btn_next  {
+  margin-top: 15px;
+  width: 100%;
+  padding: 13px 16px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+ /* qty controls */
+.qty-control { display:flex; align-items:center; gap:8px; }
+.qty-btn {
+  width:30px; height:30px; border:1px solid #ddd; background:#fff; border-radius:6px; cursor:pointer; font-weight:700;
+}
+.qty-btn:hover { background:#f5f5f5; }
+.qty-value { min-width:28px; text-align:center; display:inline-block; font-weight:600; }
