@@ -3,14 +3,14 @@ version: '3.9'
 services:
 
   frontend:
-    build: ./pizza2 
+    build: ./frontend 
     ports:
       - "3000:3000"
     depends_on:
-      - pizza-backend
+      - backend
 
-  pizza-backend:
-    build: ./pizza-backend
+  backend:
+    build: ./backend
     ports:
       - "3002:3001"
     restart: always
